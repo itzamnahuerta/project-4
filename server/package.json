@@ -2,20 +2,23 @@
   "name": "server",
   "version": "1.0.0",
   "description": "p4",
-  "main": "3000",
+  "main": "index.js",
   "scripts": {
-    "test": "hello",
     "start": "nodemon server.js",
-    "db:init" : "dropdb --if-exists -e skillsharing_project_db && createdb -e skillsharing_project_db",
-    "db:reset" : "node ./db/resetDb.js",
-    "db:seed" : "node ./db/seedDb.js"
+    "db:init": "dropdb --if-exists -e skillshare_project_db && createdb -e skillshare_project_db",
+    "db:reset": "node ./db/resetDb.js",
+    "db:seed": "node ./db/seed.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "express-serializer": "^1.0.1",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "pg": "^7.11.0",
+    "sequelize": "^5.8.7"
   }
 }

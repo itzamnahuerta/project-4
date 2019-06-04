@@ -1,20 +1,26 @@
-// Get the express module.
 const express = require('express');
-// Create a new Express application (web server)
+require('dotenv').config();
+const logger = require('morgan');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+
+const PORT = process.env.PORT || 3000;
 const app = express();
 
-// Set the port based on the environment variable
-// and fallback to 3000
-const PORT = process.env.PORT || 3000;
+app.use(logger('dev'));
+app.use(cors());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.use('/app', AppRouter);
+app.use('/auth', AuthRouter);
+app.use(passport.initialize());
 
 
 app.get("/hello", async (request, response) => {
-    // The `.send()` method returns HTML to the browser
     response.send("hello world");
 })
 
-
-// Start the web server listening on the provided port.
 app.listen(PORT, () => { 
     console.log(`Express web server listening on port ${PORT}`);
   });

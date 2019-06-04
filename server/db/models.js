@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize');
 const bcrypt = require('bcrypt');
 
+
 const db = new Sequelize({
     database: 'skillshare_project_db',
     dialect: 'postgres',
@@ -39,28 +40,25 @@ const User = db.define('user', {
         allowNull: false
     },
     bio : {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: true
     },
     availability: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true,
     },
     occupation: {
         type: Sequelize.STRING,
-        allowNull: null
+        allowNull: null 
     }
-
 })
 
-const Skills = db.define('skills', {
+const Skill = db.define('skill', {
     skill: Sequelize.STRING,
-    allowNull: false
 })
 
-const Interests = db.define('interests', {
+const Interest = db.define('interest', {
     interest: Sequelize.STRING,
-    allowNull: false
 })
 
 User.beforeCreate(async (user, options) => {
@@ -68,16 +66,15 @@ User.beforeCreate(async (user, options) => {
     user.password = hashedPassword
 })
 
-User.hasMany(Skills) 
-Skills.belongsTo(User)
-
-User.hasMany(Interests)
-Interests.belongsTo(User)
+User.hasMany(Skill) 
+User.hasMany(Interest)
+Skill.belongsTo(User)
+Interest.belongsTo(User)
 
 
 module.exports = {
     User,
-    Skills,
-    Interests,
+    Skill,
+    Interest,
     db
 }
