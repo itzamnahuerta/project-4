@@ -68,11 +68,16 @@ User.beforeCreate(async (user, options) => {
     user.password = hashedPassword
 })
 
+User.hasMany(Skills) 
+Skills.belongsTo(User)
 
+User.hasMany(Interests)
+Interests.belongsTo(User)
 
 
 module.exports = {
     User,
     Skills,
-    Interests
+    Interests,
+    db
 }
