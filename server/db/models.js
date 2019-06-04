@@ -53,10 +53,26 @@ const User = db.define('user', {
 
 })
 
+const Skills = db.define('skills', {
+    skill: Sequelize.STRING,
+    allowNull: false
+})
+
+const Interests = db.define('interests', {
+    interest: Sequelize.STRING,
+    allowNull: false
+})
+
+User.beforeCreate(async (user, options) => {
+    const hashedPassword = await bcrypt.hash(user.password, 12)
+    user.password = hashedPassword
+})
 
 
 
 
 module.exports = {
-    User
+    User,
+    Skills,
+    Interests
 }
