@@ -1,11 +1,28 @@
 import React, { Component } from 'react'
-
+import { Redirect, Link  } from 'react-router-dom';
+import { getUser } from '../../services/ApiService';
+import {pushUser} from  '../../services/ApiService';
 
 export default class UserProfile extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            user:[],
+            updateUser:[],
+            first_name: '',
+            last_name: '',
+            email: '',
+            isUpdated: false,
+            isError: false
+        }
     }
+
+    getUserFromDB = async () => {
+        const user = await getUser();
+        this.setState({user})
+        return user
+    }
+    
     render() {
         return (
             <div className="user-profile">
