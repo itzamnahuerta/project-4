@@ -19,8 +19,18 @@ export default class UserProfile extends Component {
 
     getUserFromDB = async () => {
         const user = await getUser();
-        this.setState({user})
+        this.setState({user});
         return user
+    }
+
+    async componentDidMount() {
+        try{
+            this.setState({isUpdated:false, error:false});
+            const user = await getUser();
+            this.setState({user, updateUser: user})
+        }catch(error) {
+            throw error
+        }
     }
     
     render() {
