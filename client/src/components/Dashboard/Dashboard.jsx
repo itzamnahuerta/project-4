@@ -4,6 +4,8 @@ import { Link, Redirect  } from 'react-router-dom';
 import { logout } from '../../services/ApiService';
 import authService from '../../services/AuthService';
 
+// user profile settings
+
 
 export default class Dashboard extends Component {
     constructor(props){
@@ -29,7 +31,7 @@ export default class Dashboard extends Component {
     render() {
         return (
             <div className="dashboard">
-                <h1> I AM THE DASHBAORD </h1>
+                <h1> I AM THE DASHBAORD, JUS WANNA LET YA KNOW </h1>
             </div>
         )
     }

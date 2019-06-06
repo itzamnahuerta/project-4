@@ -1,11 +1,11 @@
+
+@import 'Colors';
+@import 'LandingPage';
 @import 'UserLogin';
 @import 'RequestInvite';
 
-
-#app-name {
-    cursor: default;
-    font-size: 8em;
-    position: absolute;
-    top: 40%;
-    left:  30%;
+body{
+    background: $red;
+    color: $pink;
 }
+

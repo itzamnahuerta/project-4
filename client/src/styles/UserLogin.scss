@@ -1,38 +1,45 @@
+@import 'Colors';
+
 .login-form {
     position: relative;
-    text-align: center;
     text-transform: uppercase;
-    font-family: 'Open Sans Condensed', sans-serif;
-
+    margin-top: 2em;
+    margin-left: 2em;
+    .login-text {
+        font-size: 1.4em;
+        margin-left: 1em;
+    }
     form {
         display: flex;
         align-content: center;
-        justify-content: center;
+        justify-content: flex-start;
         flex-direction: column;
-        width: 20%;
-        margin: auto;
+        width: 100%;
+        margin-left: 10%;
         z-index: 1000;
         text-align: left;
     }
     input{
         margin: .5em auto;
-        width: 100%;
+        width: 110%;
         height: 2em;
-        border-radius: 6px;
-        border: 2px solid blue;
+        border: 1px solid black;
         transition: all 0.4s;
         padding: .5em .4em;
+        background: $red;
         // box-shadow: 4px 4px 10px $shadow;
     }
 
     input:active, input:focus {
         outline: none;
-        border: 2px solid orange;
+        border: 1px solid $pink;
+        background: $red;
     }
     input::placeholder, input::placeholder{
-        color: orange;
+        color:  black;
         transition: all 0.4s;
         opacity: 1;
+        background: $red;
     }
 
     input:focus::placeholder, input:focus::placeholder{
@@ -40,56 +47,44 @@
     }
 
     .sign-in-btn {
-        font-family: 'Noto sans';
-        text-transform: uppercase;
-        margin: 1em auto;
-        width: 40%;
-        height: 4em;
-        font-weight: 800;
+        // margin: 1em auto;
+        margin-left: 9em;
+        width: 30%;
+        height: 3em;
         letter-spacing: .3em;
-        background-color: blue;
-        border: 2px solid blue;
+        background-color: transparent;
+        border: transparent;
         cursor: pointer;
         transition: all 0.4s;
+        font-size: 1.2em;
         // box-shadow: 4px 4px 10px $shadow;
     }
 
     .sign-in-btn:hover {
-        border:2px solid orange;
-        background-color: orange;
+    border: transparent;
+    background-color: $red;
+    color: $pink;
     }
+    // .sign-in-btn:visited {
+    //     border: transparent;
+    // }
+    // .sign-in-btn:active {
+    //     border: transparent;
+    // }
+
 
     .error-modal {
         margin:auto;
-        top: 40%;
-        left: 26%;
-        height: 100%;
+        top: -8%;
+        left: 10%;
+        height: 19%;
         width: 50%;
         position: absolute;
         z-index: 100;
-        background-color: blue;
+        background-color: $red;
         transform: translateX(0);
         transition: all 0.4s;
         border-radius: 6px;
-        // background: $whiteBg;
-        // box-shadow: 4px 4px 10px $shadow;
-        
-        button {
-            margin-top: 5em;
-            background-color: blue;
-            border: 2px solid blue;
-            width: 40%;
-            height: 4em;
-            font-weight: 800;
-            letter-spacing: .3em;
-            cursor: pointer;
-            transition: all 0.4s;
-        }
-
-        button:hover {
-            background-color: orange;
-            border: 2px solid orange;
-        }
     }
 
     .no-error {

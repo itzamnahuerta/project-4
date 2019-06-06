@@ -61,12 +61,12 @@ export default class UserLogin extends Component {
         return (
             <div>
                 <div className="login-form">
-                    <div id="login-text"> login </div>
+                    <div className="login-text"> login </div>
                     {errorModal}
                     <form onChange={this.handleFormChange} onSubmit={this.handleFormSubmit} ref="">
                         <input type="text" name='email' value={email} placeholder="Email" />
                         <input type="password" name='password' value={password} placeholder="Password"/>
-                        <button type="submit" className="sign-in-btn">Login</button>
+                        <button type="submit" className="sign-in-btn"> > </button>
                     </form> 
                 </div>
             </div> 

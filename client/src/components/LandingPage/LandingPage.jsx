@@ -6,8 +6,11 @@ export default class LandingPage extends Component {
     render() {
         return (
             <div className="landing-page">
-                    <UserLogin/>
-                    <RequestInvite />
+                <div className="flex-container"> 
+                    <UserLogin className="ul-box"/>
+                    <RequestInvite className="req-box"/>
+                </div>
+                <div className="app-name"> .SYMBIOSIS.</div>
             </div>
         )
     }
