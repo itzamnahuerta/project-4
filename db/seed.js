@@ -15,12 +15,12 @@ const main = async () => {
     })
 
     const test_user = await User.create({
-        first_name: 'la india',
-        last_name: 'maria',
-        email: 'chisme101@gmail.com',
-        password: 'omaiga',
-        neighborhood: 'jackson heights',
-        borough: 'queens',
+        first_name: 'Itzamna',
+        last_name: 'Huerta',
+        email: 'test@gmail.com',
+        password: 'test',
+        neighborhood: 'Jackson Heights',
+        borough: 'Queens',
         bio: 'I vomit in the bed in the middle of the night jumps off balcony gives owner dead mouse at present then poops',
         availability: 'Sun 10:00 - 13:00, Tue 16:00 - 19:00, Fri 14:00 - 17:00',
         occupation: 'comedian, actor, tamalera'

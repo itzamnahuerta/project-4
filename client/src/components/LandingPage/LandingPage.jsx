@@ -5,9 +5,9 @@ import RequestInvite from '../RequestInvite/RequestInivte'
 export default class LandingPage extends Component {
     render() {
         return (
-            <div>
-                <UserLogin/>
-                <RequestInvite />
+            <div className="landing-page">
+                    <UserLogin/>
+                    <RequestInvite />
             </div>
         )
     }

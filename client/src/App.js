@@ -1,14 +1,20 @@
 import React from 'react';
-import './App.css';
-// import {Route, Switch} from 'react-router-dom';
-// import Dashboard from './components/Dashboard/Dashboard';
+import './styles/App.scss';
+import {Route, Switch} from 'react-router-dom';
+import Dashboard from './components/Dashboard/Dashboard';
 import LandingPage from './components/LandingPage/LandingPage';
+import authService from './services/AuthService';
 
 function App() {
+
+  const authenticate = authService.isAuthenticated()
   return (
     <div className="App">
-      <h1> skillsharing </h1> 
-      <LandingPage /> 
+      <main> 
+      <Switch> 
+        <Route exact path='/Dashboard' component={(props)=> <Dashboard {...props} authenticate={authenticate}/>}/>
+      </Switch> 
+      </main>
     </div>
   );
 }
