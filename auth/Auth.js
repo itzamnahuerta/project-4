@@ -81,7 +81,7 @@ const userAuthorized = (req,res,next) => {
     passport.authenticate('jwt', {session:false}, async (error, token) => {
         if (error || !token) {
             // response.status(401).json({ message: 'Unauthorized' });
-            let err = new Error('*** Sorry Bro Try Again ***');
+            let err = new Error('*** Sorry Try Again ***');
             err.status = 401;
             next(err)
         }

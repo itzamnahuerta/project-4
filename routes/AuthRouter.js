@@ -7,7 +7,7 @@ authRouter.post('/login', async (req, res, next) => {
         try {
             console.log("~~~~~~~ find me, i am drowning! ", err);
             if (err || !user) {
-                const error = new Error('An Error Occurred')
+                const error = new Error('An Error Occurred at AuthRouter ')
                 return next(error)
             }
 

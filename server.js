@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const AuthRouter = require('./routes/AuthRouter.js')
+const UsersRouter = require('./routes/UsersRouter.js')
 
 
 const PORT = process.env.PORT || 3000;
@@ -14,8 +15,9 @@ app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-// app.use('/app', AppRouter);
 app.use('/auth', AuthRouter);
+app.use('/users', UsersRouter);
+
 app.use(passport.initialize());
 
 
